@@ -19,7 +19,7 @@ namespace WindowsFormsApp2_class
         public DogBread bread;
 
         public Dog(int PetId,string name, string color, string gender, DogBread bread)
-            :base(PetId,name,color,gender)
+            :base(PetId,name,color,gender) // 상속받은 부모 클래스로부터 값을 받음, 부모 클래스가 호출되면서 필요
         {
             //PetId = PetId;
             //name = name;

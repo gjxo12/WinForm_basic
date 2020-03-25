@@ -16,7 +16,7 @@ namespace WindowsFormsApp2_class
         public int index = 0;
         
         //List<>로 하는법
-        public List<Customer> list = new List<Customer>();
+        public List<Customer> list = new List<Customer>(); //리스트 생성
 
         public Form1()
         {
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2_class
                 cpat.Text += i.name + " : ";
                 if (i is Cat) cpat.Text += (i as Cat).scratch();
                 else cpat.Text += (i as Dog).Bite();
-                cpat.Text += Environment.NewLine;
+                cpat.Text += Environment.NewLine; // UI에서 줄띄움을 위함
             }
 
             //if(cu.mycat != null) cpat.Text = cu.mycat.name + "  " + cu.mycat.Sound() + Environment.NewLine;
@@ -99,7 +99,7 @@ namespace WindowsFormsApp2_class
         }*/
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {// 데이터그리디뷰의 셀을 누르면 오른쪽에 출력 패널을 보이도록
             string fname = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             foreach (Customer i in list)
             {
@@ -128,6 +128,7 @@ namespace WindowsFormsApp2_class
             test.Adopt(cat2);
             Dog dog = new Dog(3, "333", "black", "Man",DogBread.Jindo);
             test.Adopt(dog);
+            // 시작과 동시에 상속받은 cat dog의 출력을 뛰우기 위함 
 
             list.Add(test);
             dataGridView.Rows.Add(test.Firstname, test.Age, test.Chk);
@@ -137,8 +138,7 @@ namespace WindowsFormsApp2_class
         {
             panel1.Show();
             Datapanel1.Hide();
-
-
+            //상단의 메뉴를 눌렀을때 UI 변환
         }
     }
 }
